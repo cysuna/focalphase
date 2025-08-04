@@ -7,31 +7,7 @@ import warnings
 import argparse
 nlp = spacy.load("en_core_web_lg")
 warnings.filterwarnings("ignore", category=UserWarning)
-'''
-for i in {0..7}
-do
-python /mnt/home/user24/project/Hallucination/hpred/AMBER0617/inference.py --inference_data \
-/mnt/home/user24/project/Hallucination/hpred/AGLA/exp/gen_llava157_agla_hpred_clipft_d23kcm36-HD18-$i.jsonl &
-done
-Generative Task:
-/mnt/home/user24/project/Hallucination/hpred/AGLA/exp/0718/gen_llava157_agla_aw_vcd_hpred_clipft_d23k-2obj-a18-HD21-e2-mr20-t02f-2obj-all.jsonl
-CHAIR:           4.0
-Cover:           45.7
-Hal:             17.8
-Cog:             1.5 
-conda activate llava2
-python /mnt/home/user24/project/Hallucination/hpred/AMBER0617/inference.py --inference_data \
-/mnt/home/user24/project/Hallucination/hpred/AvisCAGLA/exp/0722/amber_D_llava157_vcd_agla_avisc_m3id_hpred_clipft-a18-HD21-mr50-t02f-2obj-all.jsonl \
---evaluation_type d
 
-conda activate llava2
-python /mnt/home/user24/project/Hallucination/hpred/AMBER0617/inference.py --inference_data \
-/mnt/home/user24/project/Hallucination/hpred/AvisCAGLA/exp/amber_ablation_maxretry/gen_llava157_vcd_agla_avisc_m3id_hpred_clipft-a18-HD26-mr45-t02f-2obj-all.jsonl
-
-python /mnt/home/user24/project/Hallucination/hpred/AMBER0617/inference.py --inference_data \
-/mnt/home/user24/project/Hallucination/hpred/AvisCAGLA/exp/08042/gen_llava157_vcd_agla_avisc_m3id_hpred_clipft-a18-HD26-mr50-t02f-2obj-all.jsonl
-
-'''
 
 import jsonlines
 def convert_jsonl_to_json(jsonl_file):
@@ -379,4 +355,5 @@ def main(args):
 
 if __name__ == "__main__":
     args = get_args()
+
     main(args)
