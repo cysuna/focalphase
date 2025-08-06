@@ -19,9 +19,9 @@ for j in {0..7}; do
     done
 
     CUDA_VISIBLE_DEVICES=$i python llava_caption_sentence_judge_stage2.py \
-      --answers-file  exp/llava-out2/coco-blip$i-$j.jsonl \ 
+      --answers-file  exp/llava-out2/coco-llava157$i-$j.jsonl \ 
       --image-folder train2014 \
-      --question-file  exp/llava-out1/coco-blip$i-$j.jsonl \  
+      --question-file  exp/llava-out1/coco-llava157$i-$j.jsonl \  
       --part $j &
     
     pid=$!
