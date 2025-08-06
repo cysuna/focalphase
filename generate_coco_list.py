@@ -32,4 +32,4 @@ def generate_combined_coco_list(train_dir, output_file):
     print(len(all_images))
 coco_train_dir = "data/train2014"
 # 使用示例
-generate_combined_coco_list(coco_train_dir, 'data/train2014_caption.json')
+generate_combined_coco_list(coco_train_dir, 'data/train2014_caption.jsonl')
