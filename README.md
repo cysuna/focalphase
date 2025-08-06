@@ -1,4 +1,8 @@
+<div align="center">
+
 # Dynamic Phase-aware Hallucination Correction with Iteratively Focused Intervention for Large Vision-Language Models
+
+</div>
 
 ## Project Overview
 
@@ -10,3 +14,7 @@ Specifically, we leverage hallucination discrimination capacity of LVLMs to trai
 At inference time, the detector enables real-time hallucination detection to guide LVLMs to perform iteratively focused correction  at the early decoding stages within each phase, until hallucinations are resolved.
 Extensive experiments on hallucination benchmarks show that FocalPhase outperforms the previous post-hoc baselines and approach the methods of  fine-tuning LVLMs.
 Further analysis reveals that our method achieves strong performance within a controllable iterative steps, offering a favorable balance between accuracy and inference efficiency.
+
+## Install 🛠️
+
+## Install 🛠️
