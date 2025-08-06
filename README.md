@@ -42,9 +42,10 @@ We provide the AMBER generative result of LLaVA-1.5-7B with our FocalPhase Hallu
 ### Generate vision hallucination detection training data
 <a id="section1"></a>
 ```bash
-python generate\model_vqa_batch_noise_release.py
-bash generate\llava_caption_sentence_judge_stage1.sh
-bash generate\llava_caption_sentence_judge_stage2.sh
+python generate_coco_list.py
+python model_vqa_batch_noise_release.py
+bash llava_caption_sentence_judge_stage1.sh
+bash llava_caption_sentence_judge_stage2.sh
 ```
 
 ### Fine-tune CLIP for vision hallucination detection
