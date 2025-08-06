@@ -16,5 +16,45 @@ Extensive experiments on hallucination benchmarks show that FocalPhase outperfor
 Further analysis reveals that our method achieves strong performance within a controllable iterative steps, offering a favorable balance between accuracy and inference efficiency.
 
 ## Install 🛠️
+First install the packages required for our project.
+```bash
+pip install -r requirements.txt
+wget https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.8.0/en_core_web_lg-3.8.0-py3-none-any.whl
+pip install en_core_web_lg-3.8.0-py3-none-any.whl
+```
+Then download COCO train2014 images and unzip it as data/train2014.
+```bash
+cd data
+wget http://images.cocodataset.org/zips/train2014.zip
+unzip train2014.zip
+```
 
-## Install 🛠️
+## Data
+###  Vision hallucination detector training dataset
+We provide the scrips of generating vision hallucination detection training data with LLaVA-1.5.
+[scrips](#section1)
+
+### Our hallucination correction result
+We provide the AMBER generative result of LLaVA-1.5-7B with our FocalPhase Hallucination Correction method.
+[AMBER generative result](#section2)
+
+## Code
+### Generate vision hallucination detection training data
+<a id="section1"></a>
+```bash
+python generate\model_vqa_batch_noise_release.py
+bash generate\llava_caption_sentence_judge_stage1.sh
+bash generate\llava_caption_sentence_judge_stage2.sh
+```
+
+### Fine-tune CLIP for vision hallucination detection
+The training code will be made publicly available upon acceptance of the paper.
+
+### Post-hoc hallucination correction for LVLMs
+The correction code will be made publicly available upon acceptance of the paper.
+
+### Evaluate hallucination correction results for LVLMs
+<a id="section2"></a>
+```bash
+python eval/amber/inference.py  --inference_data exp/gen_llava157_amber_focalphase.jsonl
+```
