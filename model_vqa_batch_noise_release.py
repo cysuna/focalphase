@@ -149,9 +149,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-path", type=str, default="~/model/llava-1.5-7b")#~/model/liuhaotian/llava1.6-34b
     parser.add_argument("--model-base", type=str, default=None)
-    parser.add_argument("--image-folder", type=str, default="~/dataset/MMHal-Bench/images")
-    parser.add_argument("--question-file", type=str, default="~/dataset/MMHal-Bench/response_template_query.json")
-    parser.add_argument("--answers-file", type=str, default="")
+    parser.add_argument("--image-folder", type=str, default="data/train2014")
+    parser.add_argument("--question-file", type=str, default="data/train2014_caption.jsonl")
+    parser.add_argument("--answers-file", type=str, default="exp/coco2014_llava157.jsonl")
     parser.add_argument("--conv-mode", type=str, default="llava_v1")
     parser.add_argument("--num-chunks", type=int, default=1)
     parser.add_argument("--chunk-idx", type=int, default=0)
